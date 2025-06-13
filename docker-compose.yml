@@ -16,7 +16,8 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgresql://user:password@https://ilnvgebjicli.eu-central-1.clawcloudrun.com/db
+      - DATABASE_URL=postgresql://user:password@db:5432/prices
+      - API_URL=https://sfl.world/api/v1/prices
 
 volumes:
   pgdata:

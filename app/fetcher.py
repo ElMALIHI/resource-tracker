@@ -1,9 +1,10 @@
 import httpx
+import os
 from datetime import datetime
 from .database import SessionLocal
 from .models import ResourcePrice
 
-API_URL = "https://sfl.world/api/v1/prices"
+API_URL = os.getenv("API_URL", "https://sfl.world/api/v1/prices")
 
 # Define which categories to keep (example: only crops and ores)
 CROP_NAMES = {"Sunflower", "Potato", "Pumpkin", "Carrot", "Cabbage", "Beetroot",
