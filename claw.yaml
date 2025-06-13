@@ -1,0 +1,35 @@
+name: resource-tracker
+type: container
+
+env:
+  # Reference secrets for sensitive data
+  - name: DATABASE_URL
+    secretRef:
+      name: db-credentials
+      key: url
+  
+  # Direct environment variable for non-sensitive data
+  - name: API_URL
+    value: https://sfl.world/api/v1/prices
+
+secrets:
+  - name: db-credentials
+    type: basic
+    # These will be encrypted and stored securely    data:
+      url: postgresql://user:password@flower-api.ns-z82st4w8.svc.cluster.local:5432/prices
+
+resources:
+  cpu: 1
+  memory: 512Mi
+
+ports:
+  - port: 8000
+    type: HTTP
+
+# Public URL configuration
+domains:
+  - https://ptjixvwgchtj.eu-central-1.clawcloudrun.com
+
+scale:
+  min: 1
+  max: 3

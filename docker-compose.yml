@@ -16,7 +16,8 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgresql://user:password@db:5432/prices
+      # Local development uses 'db' host, production will use claw.cloud URL
+      - DATABASE_URL=${DATABASE_URL:-postgresql://user:password@db:5432/prices}
       - API_URL=https://sfl.world/api/v1/prices
 
 volumes:
