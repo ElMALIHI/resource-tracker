@@ -16,7 +16,7 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgresql://user:password@http://flower-api.ns-z82st4w8.svc.cluster.local:8000/db:5432/prices
+      - DATABASE_URL=postgresql://user:password@https://ilnvgebjicli.eu-central-1.clawcloudrun.com/db
 
 volumes:
   pgdata:
