@@ -16,7 +16,7 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgresql://user:password@db:5432/prices
+      - DATABASE_URL=postgresql://user:password@https://ilnvgebjicli.eu-central-1.clawcloudrun.com/db:5432/prices
 
 volumes:
   pgdata:
